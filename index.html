@@ -456,20 +456,24 @@ const dayMeta = {
 };
 
 const dailyHabits = [
+  { id: "electrolytes", icon: "⚡", text: "Water + sea salt upon waking" },
+  { id: "morning-q", icon: "?", text: "Morning question — What good shall I do?" },
   { id: "sunlight", icon: "☀", text: "Sunlight within 30 min of waking" },
   { id: "nophone", icon: "✕", text: "No phone first 30–60 min" },
   { id: "cold", icon: "❄", text: "Cold shower end-of-shower" },
   { id: "hip", icon: "⚙", text: "Hip flexors + Achilles 5 min" },
   { id: "meditation", icon: "○", text: "Meditation 10–15 min" },
+  { id: "caffeine-delay", icon: "⏱", text: "Caffeine 90+ min after waking" },
   { id: "creatine1", icon: "⊙", text: "Creatine dose 1 (5g)" },
   { id: "creatine2", icon: "⊙", text: "Creatine dose 2 (5g)" },
   { id: "supps", icon: "+", text: "D3+K2 · Omega-3 · with breakfast" },
   { id: "deep", icon: "▣", text: "Deep work block (60–120 min)" },
   { id: "boredom", icon: "—", text: "Boredom block 10–15 min (no inputs)" },
+  { id: "afternoon-light", icon: "☀", text: "Afternoon light walk 5–15 min" },
   { id: "cog", icon: "⊕", text: "Cognitive training 15–20 min" },
   { id: "read", icon: "▤", text: "Dense reading 20–30 min + notes" },
   { id: "protein", icon: "■", text: "200g+ protein hit" },
-  { id: "journal", icon: "▰", text: "5 min structured journal" },
+  { id: "journal", icon: "▰", text: "Evening journal — What good did I do?" },
   { id: "mag", icon: "⊙", text: "Magnesium glycinate pre-sleep" },
   { id: "screens", icon: "⌀", text: "No screens 90 min before bed" },
 ];
@@ -484,30 +488,34 @@ const flow = [
     id: "wake",
     time: "WAKE",
     when: "Within 30 min of waking",
-    duration: "25–30 min",
+    duration: "30–35 min",
     hourFrom: 5, hourTo: 8,
-    title: "Morning Activation",
+    title: "Morning Activation — Circadian Ignition",
     items: [
-      { bold: "Phone stays away — first 30–60 min:", text: "Morning phone use sets your dopamine baseline for the whole day. The first 60 min is your highest-leverage block of the day. Treat it as sacred — it sets the ceiling on everything else." },
-      { bold: "Sunlight [5–10 min]:", text: "Outside or near a bright window. Sets cortisol peak and melatonin release timer 14–16 hours later. This is the single biggest fix for morning grogginess." },
-      { bold: "Hip flexors + Achilles [5 min]:", text: "Couch stretch 60s each side · Kneeling hip flexor with posterior pelvic tilt · Single-leg calf raise 3s eccentric × 15 each. Daily at 6'4\" — chronic tightness is guaranteed." },
-      { bold: "Cold shower end-of-shower [2–3 min]:", text: "Norepinephrine +300–500%, dopamine +250% above baseline. The override of the body's quit-signal IS the rep — that's prefrontal cortex training. Focus on the exhale." },
-      { bold: "Meditation [10–15 min]:", text: "Sit. Breath focus only. Mind wanders, bring it back — that return is the rep. 2025 USC study (eye-tracking verified): 30 days produces measurable improvements in attentional control. Not clearing the mind — training it." },
+      { bold: "Phone stays away — first 30–60 min:", text: "Morning phone use sets your dopamine baseline for the whole day. The first 60 min is your highest-leverage block. Dopamine from external validation hijacks your internal reward system — protect the morning at all costs." },
+      { bold: "Water 16–32 oz + ¼ tsp Celtic sea salt [immediately]:", text: "Overnight dehydration tanks cognitive performance. Neurons require sodium and electrolytes to fire properly. Salt also supports the morning cortisol pulse. Huberman's first action every day." },
+      { bold: "Record wake time [5 sec]:", text: "Jot down when you woke. Tracks your circadian temperature minimum (~2 hours before waking). Over weeks, this data reveals your true chronotype and whether your schedule is drifting." },
+      { bold: "Sunlight [5–10 min]:", text: "Outside or near a bright window. No sunglasses. Melanopsin-containing ipRGCs in your retina detect this light and signal the suprachiasmatic nucleus — setting your cortisol peak NOW and your melatonin release timer 14–16 hours later. This is the single most important sleep and energy intervention in existence." },
+      { bold: "MORNING QUESTION [60 sec] — \"What good shall I do this day?\":", text: "Benjamin Franklin asked this every morning for 60+ years. Not planning. Not to-do listing. Intention-setting. What ONE good will you do today? This question + the evening review bookend = the single most cross-verified elite practice across 1,900 years (Franklin, Marcus Aurelius, Steve Jobs, Churchill)." },
+      { bold: "Hip flexors + Achilles [5 min]:", text: "Couch stretch 60s each side · Kneeling hip flexor · Single-leg calf raise 3s eccentric × 15 each. Daily at 6'4\" — chronic tightness is guaranteed. Long levers = more torque at every joint. Mobility is not optional." },
+      { bold: "Cold shower end-of-shower [2–3 min]:", text: "Norepinephrine +300–500%, dopamine +250% above baseline — effects lasting hours with NO crash. The override of the body's quit-signal IS the rep. Build up gradually: even 30s at the end of a warm shower works to start. Focus on the exhale." },
+      { bold: "Meditation [10–15 min] — NO caffeine before this is complete:", text: "Sit. Breath focus only. Mind wanders, bring it back — that return is the rep. Each return is a literal prefrontal cortex rep, not a failure. Caffeine must wait until after meditation — adenosine needs to clear naturally through light + movement first (Huberman's #2 non-negotiable)." },
     ]
   },
   {
     id: "neuro",
     time: "BREAKFAST",
-    when: "Post-activation, with Meal 1",
+    when: "~90–120 min post-wake — ONLY after meditation complete",
     duration: "10 min",
     hourFrom: 7, hourTo: 9,
-    title: "Neuro Stack + Meal 1",
+    title: "Neuro Stack + Meal 1 — Delayed Caffeine Protocol",
     items: [
-      { bold: "Caffeine + L-theanine [100mg / 200mg]:", text: "L-theanine smooths caffeine's edge and amplifies focus without jitter. Together they produce elevated alpha waves — calm, alert focus. 1:2 ratio is the evidence-based stack. Black coffee + 200mg L-theanine works too." },
-      { bold: "Creatine 5g [dose 1 of 2]:", text: "Most proven supplement in existence. 10g/day total — splitting reduces GI discomfort. Brain creatine doubled at 10g vs lower doses in recent German studies." },
-      { bold: "Omega-3 fish oil 2–3g EPA+DHA:", text: "DHA is structural fat for brain cell membranes. Anti-inflammatory at the neural level. Take with breakfast fat for absorption." },
-      { bold: "Vitamin D3 + K2 MK-7:", text: "3,000–5,000 IU D3 + 100mcg K2. Fat-soluble — needs your breakfast fat. Edmonton latitude = guaranteed deficiency without supplementation Oct–April." },
-      { bold: "MEAL 1 [~700 cal · 45g protein]:", text: "3 whole eggs + 1 cup oats with blueberries + 1 banana + 1 tbsp almond butter. Anchor blood sugar with protein + complex carbs." },
+      { bold: "⏱ CAFFEINE TIMING — 90–120 min after waking:", text: "Adenosine (sleepiness chemical) naturally clears in the first ~90 min after waking via light exposure and movement. Caffeine blocks adenosine receptors but doesn't eliminate adenosine. If you caffeine too early, adenosine is still there waiting when caffeine wears off → afternoon crash. Morning sunlight + cold + movement naturally clear adenosine FIRST. Then caffeine amplifies alertness. Huberman's #2 non-negotiable." },
+      { bold: "Caffeine + L-theanine [100mg / 200mg]:", text: "1:2 ratio is evidence-based. L-theanine smooths caffeine's edge — together they produce elevated alpha brain waves (calm alert focus). Half-life 5–7 hrs — no caffeine within 6 hrs of bedtime." },
+      { bold: "Creatine 5g [dose 1 of 2]:", text: "Most proven supplement in existence. 10g/day total. Brain creatine doubled at 10g vs lower doses (Fabiano & Candow 2025). Split dosing reduces GI discomfort." },
+      { bold: "Omega-3 fish oil 2–3g EPA+DHA:", text: "DHA is the most abundant fatty acid in your brain — structural component of neuronal cell membranes. EPA competes with arachidonic acid → reduces neuroinflammation. Take with breakfast fat for absorption." },
+      { bold: "Vitamin D3 + K2 MK-7:", text: "3,000–5,000 IU D3 + 100mcg K2. D3 is a precursor hormone — receptors in Leydig cells for testosterone synthesis, throughout the brain for cognition. Edmonton 53°N: zero UVB Oct–April. K2 MUST be MK-7 form." },
+      { bold: "MEAL 1 [~700 cal · 45g protein]:", text: "3 whole eggs + 1 cup oats with blueberries + 1 banana + 1 tbsp almond butter. Eggs: choline → acetylcholine (muscle contraction + memory). Blueberries: anthocyanins cross BBB, upregulate BDNF. Oats: steady-release carbs for morning cognition." },
     ]
   },
   {
@@ -558,10 +566,22 @@ const flow = [
     hourFrom: 12, hourTo: 15,
     title: "Meal 2 + Reading",
     items: [
-      { bold: "MEAL 2 [~775 cal · 50g protein]:", text: "200g ground beef or chicken + 150g cooked rice + leafy greens + olive oil + broccoli sprouts. Primary muscle-building meal of the day. Beef preferred for zinc, B12, natural creatine." },
-      { bold: "Reading [20–30 min + written notes]:", text: "Dense nonfiction. Hierarchy by cognitive demand: dense nonfiction > long-form articles > summaries > social content. Read at the edge of your current understanding. Always take written notes — no notes = near-zero long-term retention." },
-      { bold: "Priority domains right now:", text: "Marketing, business, rhetoric, psychology, behavioral science. UGC freelancing benefits directly from understanding why people buy and how persuasion actually works." },
-      { bold: "Reading is not consumption — it's cognitive training:", text: "Struggling through a hard book is the point. Comfortable reading maintains. Demanding reading builds." },
+      { bold: "MEAL 2 [~775 cal · 50g protein]:", text: "200g ground beef or chicken + 150g cooked rice + leafy greens + olive oil + broccoli sprouts. Primary muscle-building meal. Beef preferred for zinc, B12, natural creatine. Broccoli sprouts: 3-5 day old sprouts contain 20-50x more sulforaphane than mature broccoli — most potent natural Nrf2 activator." },
+      { bold: "Reading [20–30 min + written notes]:", text: "Dense nonfiction. Always take written notes — no notes = near-zero long-term retention. The goal is not consumption — it's cognitive training. Struggling through a hard book is the point. Comfortable reading maintains. Demanding reading builds." },
+      { bold: "Optional NSDR 10–20 min [if energy dips]:", text: "Yoga Nidra / Non-Sleep Deep Rest. Instead of more caffeine, use NSDR as an afternoon reset. Dopamine +65% during Yoga Nidra (2002 PET scan study). Free scripts on YouTube. Huberman's afternoon reset button." },
+    ]
+  },
+  {
+    id: "afternoonlight",
+    time: "LIGHT",
+    when: "After Meal 2, before afternoon work",
+    duration: "5–15 min",
+    hourFrom: 13, hourTo: 16,
+    title: "Afternoon Light Anchor — Second Circadian Set Point",
+    items: [
+      { bold: "Step outside [5–15 min]:", text: "No sunglasses. Walk around the block. This is NOT exercise — it's a circadian anchor. Afternoon sunlight tells your SCN it's still daytime → reduces retinal sensitivity to evening light → protects melatonin production 14–16 hours after morning light. Without this second anchor, evening artificial light has a stronger melatonin-suppressing effect. Huberman's specific protocol." },
+      { bold: "Duration by sky:", text: "Sunny: 5–10 min. Partly cloudy: 10–15 min. Overcast: 15–20 min. Light penetrates cloud cover — 10,000+ lux outdoors vs. 100–500 lux indoors even on dim days." },
+      { bold: "Combine with boredom if efficient:", text: "Walk without headphones. No phone. Two protocols, one walk — this doubles as your DMN activation block." },
     ]
   },
   {
@@ -585,8 +605,9 @@ const flow = [
     hourFrom: 16, hourTo: 18,
     title: "Pre-Workout Window",
     items: [
-      { bold: "Collagen 15–20g + Vitamin C 500mg [30–60 min before lifting]:", text: "Keith Baar protocol — collagen synthesis peaks 6 hrs after loading. Time before training so it's biologically active during the session. Amplifies connective tissue repair ~65%." },
-      { bold: "Pre-workout [20–30 min before]:", text: "Caffeine 3–5mg/kg (240–400mg for you). On Friday, eat your last meal 2+ hours before sauna — insulin blunts GH." },
+      { bold: "Collagen 15–20g + Vitamin C 500mg [30–60 min before lifting]:", text: "Keith Baar (UC Davis) protocol — collagen synthesis peaks 6 hrs after loading. Amplifies connective tissue repair ~65%. At 6'4\" your patellar tendon, Achilles, and shoulder capsule are highest-risk. Connective tissue adapts months slower than muscle — this protocol closes the gap." },
+      { bold: "Pre-workout [20–30 min before]:", text: "Caffeine 3–5mg/kg (240–400mg). On Friday, eat last meal 2+ hours before sauna — insulin blunts GH release." },
+      { bold: "Between heavy sets — Physiological Sigh:", text: "Double inhale through nose (second inhale re-inflates collapsed alveoli) → long slow exhale through mouth. Fastest known way to down-regulate nervous system between high-intensity efforts. Drops heart rate, resets CNS for next set. Costs 5 seconds. Zero equipment." },
       { bold: "500ml hydration pre-load.", text: "" },
     ]
   },
@@ -635,10 +656,11 @@ const flow = [
     when: "60–90 min before bed",
     duration: "Meal 5",
     hourFrom: 20, hourTo: 22,
-    title: "Pre-Sleep Meal",
+    title: "Pre-Sleep Meal — Sleep-First Protocol",
     items: [
-      { bold: "MEAL 5 [~575 cal · 45g protein]:", text: "300g cottage cheese or Greek yogurt + berries + honey + handful of walnuts/almonds. Casein-heavy = slow overnight protein release. Walnuts add DHA." },
-      { bold: "Don't eat closer than 60 min to sleep:", text: "Insulin disrupts melatonin and fragments sleep architecture. Time it." },
+      { bold: "MEAL 5 [~575 cal · 45g protein]:", text: "300g cottage cheese or Greek yogurt + berries + honey + handful of walnuts/almonds. Casein-heavy = slow overnight amino acid release for muscle protein synthesis during sleep." },
+      { bold: "Don't eat closer than 60 min to sleep:", text: "Insulin elevation suppresses melatonin onset and fragments sleep architecture. Digestion competes with the parasympathetic shift needed for deep sleep." },
+      { bold: "🧪 EXPERIMENT (2 weeks): Carb-forward Meal 5 variant:", text: "Move cottage cheese to Meal 4 (post-workout). Try Meal 5 as: sweet potato + honey + walnuts OR tart cherry juice. Carbs → insulin → tryptophan crossing BBB → serotonin → melatonin. Huberman specifically eats starch-heavy, protein-light dinner for sleep quality. Track sleep quality 1–10 each morning. Your data decides." },
     ]
   },
   {
@@ -647,14 +669,15 @@ const flow = [
     when: "90 min before sleep",
     duration: "15 min",
     hourFrom: 21, hourTo: 23,
-    title: "Night Protocol",
+    title: "Night Protocol — The Evening Bookend",
     items: [
-      { bold: "Structured journal [5 min]:", text: "What did I actually do today? What worked and why? What failed, and what was the real cause? What changes tomorrow? Under 10 min — depth over volume. A year of these = a complete empirical model of your own performance." },
-      { bold: "Magnesium glycinate 300–400mg:", text: "Activates GABA receptors, lowers cortisol, improves HRV and slow-wave sleep depth." },
-      { bold: "No bright screens 90 min before sleep:", text: "Blue light halts melatonin within minutes. Blue-light glasses or full shutdown." },
-      { bold: "Box breathing [5 min, in bed]:", text: "4s inhale → 4s hold → 4s exhale → 4s hold. Activates parasympathetic NS, lowers heart rate, improves time-to-sleep-onset and HRV." },
-      { bold: "Room: 65–68°F + complete darkness:", text: "Core body temperature drop initiates deep slow-wave sleep — where GH peaks and memory consolidates." },
-      { bold: "Target 8–9 hours:", text: "Non-negotiable at this training volume. Even 1 hour of deprivation reduces testosterone 10–15%, impairs protein synthesis, degrades grip strength. You cannot outwork bad sleep." },
+      { bold: "Structured journal [5 min] — \"What good did I do today?\":", text: "Franklin's evening question, asked for 60+ years. Not productivity. Impact. Did I help someone? Did I do what I said I would? Did I move the needle on something that matters? THEN: What worked and why? What failed, and what was the real cause? What changes tomorrow? This closes the loop with the morning question. Morning intention → Evening accountability. Marcus Aurelius did the same — this is the most cross-verified elite practice across 1,900 years." },
+      { bold: "Magnesium glycinate 300–400mg:", text: "Glycinate chelate crosses blood-brain barrier. Activates GABA receptors → reduces neural excitability and cortisol. Improves HRV, slow-wave sleep depth, and REM duration. Glycinate form only — not oxide (laxative) or citrate." },
+      { bold: "L-Theanine 100–200mg [optional add]:", text: "Promotes alpha brain waves — calm without sedation. Improves sleep quality and time-to-sleep-onset. Already in your morning stack; evening dose serves different purpose (GABA support vs. focus smoothing)." },
+      { bold: "No bright screens 90 min before sleep:", text: "Blue light halts melatonin within minutes. Blue-light glasses or full screen shutdown after 9 PM." },
+      { bold: "Box breathing [5 min, in bed]:", text: "4s inhale → 4s hold → 4s exhale → 4s hold. Parasympathetic activation via vagal tone. Lowers HR and improves time-to-sleep-onset. Evening breathing = nervous system down-regulation — different purpose from morning meditation." },
+      { bold: "Room: 65–68°F + complete darkness:", text: "Core body temp must drop ~1°C to initiate deep slow-wave sleep. Cool room + hot shower 60 min earlier (vasodilation → rapid core temp drop) = optimal trajectory. Complete darkness — even a single LED can suppress melatonin. Mouth tape on." },
+      { bold: "Target 8–9 hours at this training volume:", text: "1 hr deprivation = testosterone -10–15% in healthy young men (JAMA 2011), grip strength reduced, protein synthesis impaired, GH pulse blunted. 8 hours = minimum, 9 hours = optimal. You cannot outwork bad sleep." },
     ]
   },
 ];
@@ -667,7 +690,7 @@ const trainingByDay = {
     duration: "90 min",
     title: "UPPER STRENGTH A — Chest · Back · Shoulders",
     blocks: [
-      { name: "Warm-up", dur: "10 min", detail: "Arm circles × 10 each · Band pull-aparts × 20 · Thoracic rotations × 10 · Inchworms × 6 · World's greatest stretch × 5 each side." },
+      { name: "Warm-up", dur: "10 min", detail: "Arm circles × 10 each · Band pull-aparts × 20 · Thoracic rotations × 10 · Inchworms × 6 · World's greatest stretch × 5 each side. Between warm-up sets: 1–2 physiological sighs (double inhale nose → long exhale mouth) — resets CNS between efforts." },
       { name: "Rotator Cuff — MANDATORY", dur: "10 min", detail: "Band external rotations 3 × 15 · Y-T-W raises 3 × 10 · Face pulls 3 × 20. At 6'4\", skip this and impingement is when, not if." },
       { name: "Press Block", dur: "20 min", detail: "Bench Press 4 × 8 (3s eccentric) · Incline DB Press 3 × 10 · OHP 3 × 8. Every set 1–2 RIR. 2–3 min rest." },
       { name: "Pull Block", dur: "20 min", detail: "Pull-ups 4 × 6–8 (full dead hang) · Barbell Rows 3 × 8 · Face Pulls 3 × 20. 2 min rest." },
@@ -956,14 +979,15 @@ const donts = [
 ];
 
 const sleepFix = [
-  { n: 1, title: "Set one consistent wake time", desc: "Hold within 30–60 min every day including weekends. Circadian rhythm is biological — needs a fixed anchor. This is the highest-impact fix." },
-  { n: 2, title: "Sunlight within 30 min of waking", desc: "Sets cortisol peak and melatonin timer 14–16 hrs later. Without it your biological clock free-runs and drifts. Why you wake groggy after 8+ hrs." },
-  { n: 3, title: "No food 2–3 hrs before sleep", desc: "Insulin elevation suppresses melatonin onset and fragments sleep architecture." },
-  { n: 4, title: "No bright light 90 min before sleep", desc: "Blue light halts melatonin in minutes. Glasses or full screen shutdown after 9 PM." },
-  { n: 5, title: "Room: 65–68°F + complete darkness", desc: "Core temperature must drop to initiate deep sleep. Cool + dark = deeper slow-wave sleep where GH peaks." },
-  { n: 6, title: "Magnesium glycinate 300–400mg pre-sleep", desc: "GABA activation, cortisol reduction, HRV improvement, deeper slow-wave sleep." },
-  { n: 7, title: "Box breathing 5 min before sleep", desc: "4–4–4–4. Parasympathetic activation. Lowers HR and improves time-to-sleep-onset." },
-  { n: 8, title: "Target 8–9 hours at current training volume", desc: "1 hr deprivation = testosterone -10–15%, grip strength reduced, protein synthesis impaired. You cannot outwork bad sleep." },
+  { n: 1, title: "Set one consistent wake time", desc: "Hold within 30–60 min every day including weekends. Circadian rhythm is biological — needs a fixed anchor. This is the highest-impact fix. Wake time consistency matters more than bedtime consistency." },
+  { n: 2, title: "Sunlight within 30 min of waking", desc: "Sets cortisol peak and melatonin timer 14–16 hrs later. Melanopsin-containing ipRGCs signal the suprachiasmatic nucleus. Without this your biological clock (~24.2h) drifts 0.2h/day — 1 hour off in 5 days. Khalsa et al. 2003, J Physiol." },
+  { n: 3, title: "Afternoon light exposure 5–15 min", desc: "Second circadian anchor. Afternoon sunlight tells your SCN it's still daytime → reduces retinal sensitivity to evening light → protects melatonin onset. Huberman's specific protocol — as important as morning light for sleep quality." },
+  { n: 4, title: "No food 2–3 hrs before sleep", desc: "Insulin elevation suppresses melatonin onset and fragments sleep architecture. The 60-min minimum is just that — a minimum. 90–120 min is better when possible." },
+  { n: 5, title: "No bright light 90 min before sleep", desc: "Blue light (450–480nm) suppresses melatonin within minutes via melanopsin ipRGCs. Red/amber lighting only after 9 PM. Screens off or use red-tinted glasses." },
+  { n: 6, title: "Room: 65–68°F + complete darkness", desc: "Core body temp must drop ~1°C to initiate deep slow-wave sleep. Cool room + hot shower 60 min before bed (vasodilation → rapid core temp drop) = optimal trajectory. Mouth tape enforces nasal breathing." },
+  { n: 7, title: "Magnesium glycinate 300–400mg + optional L-Theanine 100–200mg", desc: "Mg glycinate crosses BBB → GABA activation, cortisol reduction, deeper slow-wave sleep. L-Theanine promotes alpha waves without sedation. Glycinate form only." },
+  { n: 8, title: "Box breathing 5 min before sleep", desc: "4s inhale → 4s hold → 4s exhale → 4s hold. Parasympathetic activation via vagal tone. Evening breathing is nervous system down-regulation — different purpose from morning meditation." },
+  { n: 9, title: "Target 8–9 hours at current training volume", desc: "1 hr deprivation = testosterone -10–15% in healthy young men (JAMA 2011), grip strength reduced, protein synthesis impaired, GH pulse blunted. 8 hours = minimum, 9 hours = optimal." },
 ];
 
 // ============================================
